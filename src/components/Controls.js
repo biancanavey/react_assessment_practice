@@ -19,19 +19,20 @@ class Controls extends React.Component{
     }
 
     firstLaunch = () => {
-        this.props.updateCurrentLaunch(1);
+        this.props.updateCurrentLaunch(0);
     }
 
     lastLaunch = () => {
-        this.props.updateCurrentLaunch(999);
+        this.props.updateCurrentLaunch(this.props.lastestLaunch) ;
     }
 
 
     updateInputLaunch = (evt) => {
-        this.setState({inputLaunch: evt.target.value});
+        this.setState({inputLaunch: evt.target.value);
     }
 
     handleSpecificLaunchChoice = (evt) => {
+        evt.preventDefault();
         this.props.updateCurrentLaunch(this.state.inputLaunch);
     }
 

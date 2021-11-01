@@ -3,7 +3,8 @@ import React from "react";
 class LaunchDetails extends React.Component{
 
     render(){
-
+        const launch = this.props.launch;
+        if (launch) { 
         return(
             <div className="details">
                 <h2>Launch Number {this.props.launch.flight_number}</h2>
@@ -14,7 +15,13 @@ class LaunchDetails extends React.Component{
             </div>
         )
     }
+    else{
+        return(
+        <h1>No matches found</h1>
+        )
+    }
 
+}
 }
 
 export default LaunchDetails;
